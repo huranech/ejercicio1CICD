@@ -2,8 +2,8 @@ name: Primer workflow
 on: push
 jobs:
  hola_mundo:
- runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
- steps:
- - name: Mostrar mensaje
- run: echo "Hola mundo"
+  steps:
+  - name: Mostrar mensaje
+    run: echo "Hola mundo"
