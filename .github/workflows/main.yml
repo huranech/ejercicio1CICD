@@ -1,0 +1,27 @@
+name: Ejecutar Tests
+
+on:
+  push:
+    branches:
+      - main  # O el nombre de tu rama principal
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v2
+
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # Puedes cambiar la versión según tus necesidades
+
+    - name: Instalar dependencias
+      run: |
+        pip install -r requirements.txt  # Si tienes un archivo de requisitos
+        pip install pytest
+
+    - name: Ejecutar Tests
+      run: pytest
