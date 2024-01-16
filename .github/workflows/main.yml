@@ -1,27 +1,15 @@
-name: Ejecutar Tests
-
-on:
-  push:
-    branches:
-      - main  # O el nombre de tu rama principal
-
+name: Primer workflow
+on: push
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  hola_mundo:
+	runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout del código
-      uses: actions/checkout@v2
+	steps:
+  	- name: Bajar codigo
+    	uses: actions/checkout@v4
+   	 
+  	- name: instalar pytest
+    	run: pip install pytest
 
-    - name: Configurar Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.8  # Puedes cambiar la versión según tus necesidades
-
-    - name: Instalar dependencias
-      run: |
-        pip install -r requirements.txt  # Si tienes un archivo de requisitos
-        pip install pytest
-
-    - name: Ejecutar Tests
-      run: pytest
+  	- name: utilizar pytest
+    	run: pytest test.py
