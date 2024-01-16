@@ -6,7 +6,7 @@ jobs:
 
     steps:
     - name: Bajar codigo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
    	 
     - name: instalar pytest
       run: pip install pytest
