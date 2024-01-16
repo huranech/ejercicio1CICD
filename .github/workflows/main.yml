@@ -2,14 +2,14 @@ name: Primer workflow
 on: push
 jobs:
   hola_mundo:
-	runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-	steps:
-  	- name: Bajar codigo
-    	uses: actions/checkout@v4
+    steps:
+    - name: Bajar codigo
+      uses: actions/checkout@v4
    	 
-  	- name: instalar pytest
-    	run: pip install pytest
+    - name: instalar pytest
+      run: pip install pytest
 
-  	- name: utilizar pytest
-    	run: pytest test.py
+    - name: utilizar pytest
+      run: pytest test.py
