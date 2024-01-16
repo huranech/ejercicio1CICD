@@ -1,0 +1,22 @@
+name: análisis de calidad de código
+
+on: push
+
+jobs:
+  code_quality_analysis:
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+    - name: checkout del codigo
+      uses: actions/checkout@v2
+
+    - name: ejecutar análisis del código
+      uses: advanced-security/python-lint-code-scanning-action@v1
+      with:
+        linter: pylint
+
+    - name: comprobar resultado
+      run: echo "analisis completado"
